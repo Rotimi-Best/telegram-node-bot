@@ -340,9 +340,10 @@ const form = {
     name: {
 	    q: 'Send me your name',
 	    error: 'sorry, wrong input',
-	    keyboard: [[{text: 'Skip Question'}]]
+	    keyboard: [[{text: 'Skip Question'}]], // Not required but can be used if buttons are needed
+	    resize_keyboard: true, // Not required, this is false by default
 	    validator: (message, callback) => {
-		    if(message.text) {
+		    if (message.text) {
 			    callback(true, message.text) //you must pass the result also
 			    return
 		    }
@@ -354,7 +355,7 @@ const form = {
 	    q: 'Send me your age',
 	    error: 'sorry, wrong input',
 	    validator: (message, callback) => {
-		    if(message.text && IsNumeric(message.text)) {
+		    if (message.text && IsNumeric(message.text)) {
 			    callback(true, toInt(message.text))
 			    return
 		    }
