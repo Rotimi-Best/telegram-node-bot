@@ -340,6 +340,7 @@ const form = {
     name: {
 	    q: 'Send me your name',
 	    error: 'sorry, wrong input',
+	    keyboard: [[{text: 'Skip Question'}]]
 	    validator: (message, callback) => {
 		    if(message.text) {
 			    callback(true, message.text) //you must pass the result also
