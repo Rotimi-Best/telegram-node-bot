@@ -271,10 +271,10 @@ const tg = new Telegram.Telegram('YOUR_TOKEN', {
     workers: 1
 })
 
-tg.sendMessage(123, 'test message') //will be sent 2 times (one time on master and one time on worker)
+tg.api.sendMessage(123, 'test message'); //will be sent 2 times (one time on master and one time on worker)
 
 tg.onMaster(() => {
-    tg.sendMessage(123, 'test message') //will be sent one time
+    tg.api.sendMessage(123, 'test message'); //will be sent one time
 })
 ```
 
